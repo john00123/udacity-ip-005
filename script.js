@@ -9,18 +9,18 @@ var clock = setInterval(function () {
 
 // score tracker
 let points = 0.5;
-$('.card').click(function(){
-	
+$('.card button').click(function(){
+
 	if (points < 9.5){
-	$('.stars').text(Math.round(points)+ ' moves ' +  '  ★★★');
+	$('.stars').text(Math.round(points) + ' moves' + ' ★★★' );
 	}
-	
+
 	if (points >= 9.5){
-	$('.stars').text(Math.round(points)+ ' moves ' +  '  ★★☆');
+	$('.stars').text(Math.round(points)+ ' moves ' + ' ★★☆' );
 	}
-	
+
 	if (points >= 13.5){
-	$('.stars').text(Math.round(points)+ ' moves ' + '  ★☆☆');
+	$('.stars').text(Math.round(points)+ ' moves ' + ' ★☆☆');
 	}
 	points += 0.5;
 });

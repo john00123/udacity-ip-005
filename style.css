@@ -1,7 +1,6 @@
 body{
 	background-color: #f8f9f9;
 	height:100vh;
-	font: 100%/1.6 'Open Sans', sans-serif;
 	/* aligning center */
 	display: flex;
 	align-items: center;
@@ -11,6 +10,7 @@ body{
 
 /* this is the chrome of where the game is going to be played */
 .board{
+	position: relative;
 	padding: 20px;
 	background-color: white;
 	border-radius: 4px;
@@ -22,18 +22,19 @@ body{
 	box-shadow: 0px 5px 5px #abb2b9;
 	box-shadow: 0px 7px 7px #abb2b9;
 }
+h1, h2{
+	font: 20px/1.6 'Open Sans', sans-serif;
+}
 
 h4{
 	color: #abb2b9;
-	font: 90%/1.6 'Open Sans';
+	font: 14px/1.6 'Open Sans';
 	font-weight: 300;
 }
 h2{
 	display:flex;
 	justify-content:flex-end;
-	transform: translatey(-47px);
-}
-
-.stars span{
-	color:red;
+	position: absolute;
+	top:18px;
+	right: 20px;
 }
