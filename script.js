@@ -16,18 +16,25 @@ var array = [];
 var index = 0;
 $('.card button').click(function(){
   var select = $( this ).text();
-  array[index] += text(select);
+  array.push(select);
+  index += 1;
+  $('h1').text(array);
+  $('h3').text(array[3]);
 
-  if (index == 1){
+  if (index == 2){
     if(array[0] == array[1]){
-      $(body).css('background-color','blue');
+      $('body').css('background-color','blue');
       index = 0;
+      array = [];
     } else{
-      $(body).css('background-color','red');
+      $('body').css('background-color','red');
+      index = 0;
+      array = [];
     }
   };
-  index += 1;
-  $(h1).text(index);
+
+
+
 
   // score tracker code.
   if (points < 9.5){
