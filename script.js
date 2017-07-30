@@ -12,25 +12,31 @@ var clock = setInterval(function () {
 
 // score tracker code.
 let points = 0.5;
+var pairNumber = 0;
 var array = [];
 var index = 0;
-$('.card button').click(function(){
-  var select = $( this ).text();
-  array.push(select);
-  index += 1;
 
+$('.card button').click(function(){
+  var select = $(this).text();
+  array.push(select);
+  $(this).addClass('selected');
+
+index += 1;
  // registers clicks and takes value, then it compares it to each other to check if it's correct or not.
   if (index == 2){
     if(array[0] == array[1]){
-      $('body').css('background-color','blue');
       index = 0;
       array = [];
-    } else{
-      $('body').css('background-color','red');
+      pairNumber +=1;
+      $('.selected').addClass('good');
+    }
+    if(array[0] != array[1]){
+      $('*').removeClass('selected');
       index = 0;
       array = [];
     }
   };
+
 
 
 

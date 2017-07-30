@@ -50,6 +50,15 @@ h2{
 	margin-bottom: 20px;
 }
 
+.selected{
+	background-color: lavender;
+	pointer-events: none;
+}
+
+.good{
+	background-color: green;
+	pointer-events: none;
+}
 
 .stars span{
 	font-size: 12px;
