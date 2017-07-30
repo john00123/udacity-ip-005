@@ -39,7 +39,7 @@ $('.card button').click(function(){
   };
 
   if (pairNumber === 1){
-    alert('You win. It took you ' +(time -1) + ' seconds and '+ point +' moves. Congratulations!');
+    alert('You win. It took you ' +(time -1) + ' seconds and '+ points +' moves. Congratulations!');
     clearInterval(clock);
   }
 
