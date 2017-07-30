@@ -9,7 +9,6 @@ var clock = setInterval(function () {
 	time ++;
 },1000);
 
-
 // score tracker code.
 let points = 0.5;
 var pairNumber = 0;
@@ -18,16 +17,18 @@ var index = 0;
 
 $('.card button').click(function(){
   var select = $(this).text();
-  array.push(select);
+  // takes values from cards, and adds them to an array for comparison.
   $(this).addClass('selected');
+  array.push(select);
+  index += 1;
 
-index += 1;
- // registers clicks and takes value, then it compares it to each other to check if it's correct or not.
+  // registers clicks and takes value, then it compares it to each other to check if it's correct or not.
   if (index == 2){
     if(array[0] == array[1]){
+      pairNumber +=1;
       index = 0;
       array = [];
-      pairNumber +=1;
+      // adds to number of correct answers
       $('.selected').addClass('good');
     }
     if(array[0] != array[1]){
@@ -37,9 +38,10 @@ index += 1;
     }
   };
 
-
-
-
+  if (pairNumber === 1){
+    alert('you win');
+    clearInterval(clock);
+  }
 
   // score tracker code.
   if (points < 9.5){
