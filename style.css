@@ -57,3 +57,10 @@ h2{
 	padding-left: 20px;
 	color:#ffc300;
 }
+
+button{
+	border: 1px solid #abb2b9;
+	border-radius: 25px;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+}
