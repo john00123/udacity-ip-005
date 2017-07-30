@@ -18,9 +18,8 @@ $('.card button').click(function(){
   var select = $( this ).text();
   array.push(select);
   index += 1;
-  $('h1').text(array);
-  $('h3').text(array[3]);
 
+ // registers clicks and takes value, then it compares it to each other to check if it's correct or not.
   if (index == 2){
     if(array[0] == array[1]){
       $('body').css('background-color','blue');
