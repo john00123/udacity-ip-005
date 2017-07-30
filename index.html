@@ -1,21 +1,28 @@
 <head>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" >
 <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
 	<div class = board>
-		<h1> Memory Game </h1>
-		<h4 class = time>0 secs</h4>
-		<h2 class = stars> 0 moves ★★★</h2>
-		<div class = card> <button>One</button </div>
+		<!-- start on the top of the board, includes title, timer and moves counter. -->
+		<div class = top>
+			<h1> Memory Game </h1>
+			<h4 class = time> 0 secs </h4>
+			<h2 class = stars> 0 moves <span> &#9733; &#9733; &#9733; </span> </h2>
+		</div>
+		<!-- This is the start of the cards container -->
+		<div class = card > <button> Boat </button> </div>
+		<div class = card > <button> Boat </button> </div>
+		<div class = card > <button> house </button> </div>
 
+		<!-- This is the reset button -->
+		<div class = reset> <button> Reset Game </button> </div>
 	</div>
-	<div class = reset><button>Reset Game</button></div>
 </body>
 
-
+<!-- Book performance javascript suggested placing scripts at the end of the body -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 <script src="script.js"></script>
