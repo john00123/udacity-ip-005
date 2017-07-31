@@ -70,9 +70,13 @@ h2{
 	align-items: center;
 	justify-content: center;
 	height: 100px;
-	width: 22%;
-	background-color: wheat;
-	margin: 10px;
+	width: 24%;
+	background-color: #fce38a;
+	border-radius: 4px;
+	margin: 4.5px;
+	transform: rotateY(180deg);
+	color:transparent;
+	transition: all 1s;
 }
 
 .card:hover{
@@ -80,11 +84,17 @@ h2{
 }
 
 .selected{
-	background-color: lavender;
+	background-color: #625772;
 	pointer-events: none;
+	transform: rotateY(0deg);
+	transition: all 1s;
+	color:white;
 }
 
+
 .good{
-	background-color: green;
+	transform: rotateY(0deg);
+	background-color: #95e1d3;
+	color:black;
 	pointer-events: none;
 }

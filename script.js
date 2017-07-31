@@ -26,14 +26,16 @@ $('.card').click(function(){
 	// registers clicks and takes value, then it compares it to each other to check if it's correct or not.
 	if (index == 2){
 		if(array[0] == array[1]){
-			correctAnswers +=1;
-			// adds to number of correct answers
-			$('.selected').addClass('good');
+			setTimeout(function(){$('.selected').addClass('good');},800);
 			index = 0;
 			array = [];
+			// adds to number of correct answers
+			correctAnswers +=1;
 		}
 		if(array[0] != array[1]){
-			$('*').removeClass('selected');
+			setTimeout(function(){
+				$('*').removeClass('selected');
+			},800);
 			index = 0;
 			array = [];
 		}
@@ -44,7 +46,7 @@ $('.card').click(function(){
 
 	// registers the number of correct pais in the board. Once all of them have been completed it triggers alert and stops clock.
 	if (correctAnswers === ($('.card').length/2)){
-		alert('You win. It took you ' +(time -1) + ' seconds and '+ points +' moves. Congratulations!');
+		setTimeout(function() { alert('You win. It took you ' +(time -1) + ' seconds and '+ Math.round(points-1) +' moves. Congratulations!'); }, 1800); //added delay to allow animation to finish
 		clearInterval(clock);
 	};
 
