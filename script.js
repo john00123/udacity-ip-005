@@ -25,8 +25,12 @@ $('.card').click(function(){
 
 	// registers clicks and takes value, then it compares it to each other to check if it's correct or not.
 	if (index == 2){
+		$('.card').addClass('stop');
 		if(array[0] == array[1]){
-			setTimeout(function(){$('.selected').addClass('good');},800);
+			setTimeout(function(){
+			$('.selected').addClass('good');
+			$('.card').removeClass('stop');
+			},400);
 			index = 0;
 			array = [];
 			// adds to number of correct answers
@@ -34,6 +38,7 @@ $('.card').click(function(){
 		}
 		if(array[0] != array[1]){
 			setTimeout(function(){
+				$('.card').removeClass('stop');
 				$('*').removeClass('selected');
 			},800);
 			index = 0;
