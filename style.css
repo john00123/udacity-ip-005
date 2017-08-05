@@ -137,8 +137,9 @@ h2{
 	position: fixed;
 	top:0;
 	left: 0;
-	display: none;
+	pointer-events: none;
 	justify-content: center;
+	display: flex;
 	align-items: center;
 	text-align: center;
 	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
@@ -160,7 +161,7 @@ h2{
 	color: transparent;
 }
 .popup h2 span{
-	margin-left: -80px;
+	margin-left: -100px;
 	text-align: center;
 	font-size: 40px;
 	letter-spacing: 20px;

@@ -42,7 +42,7 @@ $('.card').click(function () {
     $('.card').toggleClass('stop');
     if (array[0] == array[1]) {
       setTimeout(function () {
-        $('.selected').addClass('good');
+        var correct = $('.selected').addClass('good');
         $('.card').toggleClass('stop');
       }, 400);
       index = 0;
@@ -65,7 +65,7 @@ $('.card').click(function () {
   if (correctAnswers === ($('.card').length / 2)) {
     setTimeout(function () {
       // alert('You win. It took you ' + (time - 1) + ' seconds and ' + Math.round(points - 1) + ' moves. Congratulations!');
-      $('.popup').css('display','flex'),
+      $('.popup').css('pointer-events','all'),
       $('.popup').css('opacity','1');
 
     }, 1800);
@@ -95,3 +95,10 @@ $('.card').click(function () {
 $('.reset').click(function () {
   window.location.reload();
 });
+
+
+//local storage code
+
+localStorage.setItem('score', points);
+localStorage.setItem('time', time);
+localStorage.setItems('good', correct);
