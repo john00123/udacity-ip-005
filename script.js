@@ -1,7 +1,5 @@
 
-// event listener on load trigger counter
-$(document).on('pageload', clock);
-
+// event listener on load trigger counte
 // timer
 var time = 0;
 var clock = setInterval(function () {
@@ -9,9 +7,14 @@ var clock = setInterval(function () {
   time++;
 }, 1000);
 
+var initial = function(){
+	$('.card').addClass('selected');
+}
+
+
+
 // card generator and randomizer
 var cards = ['Boat', 'Boat', 'Car', 'Car', 'House', 'House', 'Light', 'Light', 'Lamp', 'Lamp', 'Rug', 'Rug', 'Plant', 'Plant', 'Book', 'Book'];
-
 var max = cards.length;
 var min = 1;
 
@@ -28,6 +31,7 @@ var points = 0.5; //first click needs to increment 1 and 2 clicks will equal one
 var correctAnswers = 0;
 var array = [];
 var index = 0;
+
 
 $('.card').click(function () {
   var select = $(this).text();
