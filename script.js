@@ -1,4 +1,9 @@
 
+localStorage.getItem('score');
+localStorage.getItem('good');
+localStorage.getItem('time');
+
+
 // event listener on load trigger counte
 // timer
 var time = 0;
@@ -6,8 +11,6 @@ var clock = setInterval(function () {
   $('.time').text(time + ' secs');
   time++;
 }, 1000);
-
-
 
 // card generator and randomizer
 var cards = ['Boat', 'Boat', 'Car', 'Car', 'House', 'House', 'Light', 'Light', 'Lamp', 'Lamp', 'Rug', 'Rug', 'Plant', 'Plant', 'Book', 'Book'];
@@ -101,4 +104,4 @@ $('.reset').click(function () {
 
 localStorage.setItem('score', points);
 localStorage.setItem('time', time);
-localStorage.setItems('good', correct);
+localStorage.setItem('good', correct);
