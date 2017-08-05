@@ -7,10 +7,6 @@ var clock = setInterval(function () {
   time++;
 }, 1000);
 
-var initial = function(){
-	$('.card').addClass('selected');
-}
-
 
 
 // card generator and randomizer
@@ -38,29 +34,25 @@ $('.card').click(function () {
 
   // takes values from cards, and adds them to an array for comparison.
   array.push(select);
-  $('h1').text(array);
   $(this).addClass('selected');
   index += 1;
 
   // registers clicks and takes value, then it compares it to each other to check if it's correct or not.
   if (index == 2) {
-    $('.card').addClass('stop');
+    $('.card').toggleClass('stop');
     if (array[0] == array[1]) {
       setTimeout(function () {
         $('.selected').addClass('good');
-        $('.card').removeClass('stop');
+        $('.card').toggleClass('stop');
       }, 400);
-
       index = 0;
       array = [];
-
-      // adds to number of correct answers
       correctAnswers += 1;
     }
 
     if (array[0] != array[1]) {
       setTimeout(function () {
-        $('.card').removeClass('stop');
+        $('.card').toggleClass('stop');
         $('*').removeClass('selected');
       }, 800);
 
@@ -72,7 +64,10 @@ $('.card').click(function () {
   // registers the number of correct pais in the board. Once all of them have been completed it triggers alert and stops clock.
   if (correctAnswers === ($('.card').length / 2)) {
     setTimeout(function () {
-      alert('You win. It took you ' + (time - 1) + ' seconds and ' + Math.round(points - 1) + ' moves. Congratulations!');
+      // alert('You win. It took you ' + (time - 1) + ' seconds and ' + Math.round(points - 1) + ' moves. Congratulations!');
+      $('.popup').css('display','flex'),
+      $('.popup').css('opacity','1');
+
     }, 1800);
 
     //added delay to allow animation to finish\
