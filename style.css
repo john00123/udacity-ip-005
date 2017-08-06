@@ -226,8 +226,16 @@ h4{
 	100%{ left:100%; width: 0; }
 }
 
+/*mediaqueries*/
+
+@media only screen and (max-width: 1200px) {
+	.card {
+      height: 150px;
+	}
+}
+
 @media only screen and (max-width: 600px) {
-    .card {
-        height: 100px;
-    }
+	.card {
+  	height: 80px;
+  }
 }
