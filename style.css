@@ -228,7 +228,7 @@ h4{
 
 /*mediaqueries*/
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (orientation: landscape)(max-width: 1200px) {
 	.card {
       height: 150px;
 	}
