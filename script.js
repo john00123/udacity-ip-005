@@ -91,7 +91,7 @@ $(function(){
 });
 
 //reset button
-$('.reset').click(function () {
+$('.reset button').click(function () {
   window.location.reload();
 });
 
