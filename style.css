@@ -4,6 +4,7 @@ body{
 	font: 14px/22px "Open Sans", sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
+	height: 100vh;
 }
 
 /*center aligned elements*/
