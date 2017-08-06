@@ -73,7 +73,7 @@ h4{
 	background-color: #aba0cb;
 	border-radius: 4px;
 	color: transparent;
-	height: 200px;
+	height: 15%;
 	margin: 5px;
 	width: calc(25% - 10px);
 	transform: rotateY(180deg);
@@ -83,7 +83,6 @@ h4{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
-
 }
 
 .card:hover,
@@ -170,12 +169,6 @@ h4{
 	left: 0;
 	text-align: center;
 }
-
-/*.popup{
-	opacity: 1;
-	pointer-events: all;
-}*/
-
 
 /*main title*/
 .popup h1{

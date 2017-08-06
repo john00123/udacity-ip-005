@@ -47,6 +47,7 @@ $(function(){
       // disables cards while animating
       $('.card').toggleClass('stop');
 
+      // correct
       if (array[0] == array[1]) { setTimeout(function () {
           var correct = $('.selected').addClass('good');
           $('.card').toggleClass('stop');
@@ -55,6 +56,7 @@ $(function(){
         array = [];
         correctAnswers += 1;
 
+      // incorrect
       } else { setTimeout(function () {
         $('.card').toggleClass('stop');
         $('*').removeClass('selected');
@@ -67,15 +69,14 @@ $(function(){
     // score tracker code.
     if (moves < 14.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ★ ★ </span>');
-    }
 
-    if (moves >= 14.5) {
+    } if (moves >= 14.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ★ ☆</span>');
-    }
 
-    if (moves >= 24.5) {
+    } if (moves >= 24.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ☆ ☆</span>');
     }
+
     moves += 0.5;
 
     //victory code
@@ -97,10 +98,8 @@ $('.reset').click(function () {
 //reset keydown
 $(document).ready(function () {
   $('body').on('keydown keyup',function(e){
-    var reload = e.type=="keydown" ? 'red' : 'white' ;
-      if(e.which==82){
+      if(e.which == 82){
         window.location.reload();
       }
     });
-
 });
