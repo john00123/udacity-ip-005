@@ -1,33 +1,53 @@
-<head>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" >
-<link rel="stylesheet" type="text/css" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" >
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-</head>
+	<body>
+		<div class = 'board'>
 
-<body>
-	<div class = 'board'>
-		<!-- start on the top of the board, includes title, timer and moves counter. -->
-		<div class = 'top'>
-			<h1> Memory Game </h1>
-			<h4 class = 'time'> 0 secs </h4>
-			<h2 class = 'stars'> 0 moves <span> &#9733; &#9733; &#9733; </span> </h2>
-		</div>
-		<!-- This is the start of the cards container -->
-		<div class = 'table'>
-		</div>
-		<!-- This is the reset button -->
-		<div class = 'reset'>  <button>Reset Game</button>  </div>
-	</div>
-	<div class = 'popup'>
-		<div>
-			<h1> Congratulation you won! <br> Your total time</h1>	<h4 class = 'time'> 0 secs </h4>
-			<h2 class = 'stars'> 10 moves <span> &#9733; &#9733; &#9733;</span> </h2>
-			<div class = 'reset'>  <button>Play Again</button>  </div>
-		</div>
-	</div>
-</body>
+			<!-- elements on the head of the board -->
+			<div class = 'top'>
+				<h1> Memory Game </h1>
+				<h4 class = 'time'> 0 secs </h4>
+				<h2 class = 'stars'>
+					0 moves <span> ★ ★ ★ </span>
+				</h2>
+			</div>
 
-<!-- Book performance javascript suggested placing scripts at the end of the body -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-</script>
-<script src="script.js"></script>
+			<!-- This is the cards container -->
+			<div class = 'table'> </div>
+
+			<!-- This is the reset button -->
+			<div class = 'reset'>
+				<button> Reset Game (r)</button>
+			</div>
+
+		</div>
+
+		<!-- popup code -->
+		<div class = 'popup'>
+			<div> <!-- uses flexbox to center align -->
+				<h1> Congratulation you won! <br> Your total time </h1>
+				<h4 class = 'time'> </h4>
+				<h2 class = 'stars'>
+					0 moves<span>★ ★ ★</span>
+				</h2>
+				<div class = 'reset'>
+					<button> Play Again </button>
+				</div>
+		</div>
+		</div>
+	</body>
+
+	<!-- Book performance javascript suggested placing scripts at the end of the body -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="script.js"> </script>
+</html>

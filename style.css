@@ -1,93 +1,93 @@
-/*General styling*/
 
 body{
-	background-color: #f8f9f9;
-	/* aligning center */
+	background-color: #f9f9f9;
+	font: 14px/22px "Open Sans", sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*center aligned elements*/
+body,
+.card,
+.table,
+.popup,
+.reset,
+.good::after{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	font: 14px/22px 'Open Sans', sans-serif;
+	position: relative;
 }
 
-
+/*multiple items font*/
 h1,
 h2{
-	font: 20px/10px 'Open Sans', sans-serif;
+	font: 20px/10px "Open Sans", sans-serif;
 	font-weight: 300;
 }
 
+/*avoiding referencing by class in elements that will be reused for popup, that way I can overwrite the styling*/
+h2{
+	position: absolute;
+	top: 18px;
+	right: 20px;
+}
 
 h4{
 	color: #abb2b9;
 	font-weight: 300;
 }
 
-
-h2{
-	position: absolute;
-	top:18px;
-	right: 20px;
-}
-
 /* this is the chrome of where the game is going to be played */
 .board{
-	position: relative;
-	padding: 20px;
 	background-color: white;
 	border-radius: 4px;
-	margin:auto;
-	min-width: 960px;
+	position: relative;
+	padding: 20px;
+	width: 960px;
 	/* natural shadow effect */
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.02);
 	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.02);
 }
 
-
 .top{
-	border-bottom: 1px solid #f8f9f9;
+	border-bottom: 1px solid #f9f9f9;
 	margin-bottom: 20px;
 }
 
 .stars span{
-	font-size: 12px;
-	line-height: 12px;
+	color: #ffc300;
+	font: 14px/10px "Open Sans", sans-serif;
 	padding-left: 20px;
-	color:#ffc300;
 }
 
 .table{
-	display: flex;
-	width: 100%;
 	align-items: flex-start;
-	flex-wrap: wrap;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 }
 
+/*cards styles*/
 .card{
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 200px;
-	width: calc(25% - 10px);
 	background-color: #aba0cb;
 	border-radius: 4px;
-	margin: 5;
-	transform: rotateY(180deg);
 	color: transparent;
+	height: 200px;
+	margin: 5px;
+	width: calc(25% - 10px);
+	transform: rotateY(180deg);
 	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+
+	/*limits user selection of the text of the cards*/
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+
 }
 
-.card:hover{
+.card:hover,
+.popup button:hover{
 	cursor: pointer;
 	background-color: #c4b5e9;
 	box-shadow: 0 1px 1px rgba(72, 63, 95, 0.2);
@@ -96,108 +96,139 @@ h2{
 
 .selected{
 	background-color: #7b709a;
+	color: white;
 	transform: rotateY(0deg);
-	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
-	color:white;
 }
 
+/*Reset style*/
+
+.reset{
+	margin-top: 20px;
+	border-top: 1px solid #f9f9f9;
+}
+
+.reset button{
+	color: #147ff3;
+	outline:0;
+	border: 0;
+	font: 14px/22px "Open Sans", sans-serif;
+	margin-left: 5px;
+	height: 40px;
+	width: 200px;
+	border-radius: 4px;
+	margin-top: 20px;
+	padding: 6px 10px;
+	background-color: #f9f9f9;
+	box-sizing: border-box;
+}
+
+.reset button:hover{
+	background-color: #147ff3;
+	color :white;
+	cursor: pointer;
+	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+}
+
+/*disable click on selected items*/
+.good,
+.selected,
+.stop,
+.popup
+{
+	pointer-events: none;
+	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+}
 
 .good{
-	transform: rotateY(0deg);
-	position: relative;
 	background-origin: border-box;
-	background-color:#1CD7BA;
-	color:#149A86;
-	pointer-events: none;
+	background-color: #1cd7ba;
+	color: #149a86;
+	position: relative;
+	transform: rotateY(0deg);
 }
 
+/*animation details*/
 .good::after{
 	content:'';
-	position: absolute;
-	display: block;
-	background-color: #2BDEC3;
+	animation-name: glow;
+	animation-duration: 1.2s;
+	background-color: #2bdec3;
 	height: 100%;
 	top:0;
-	/*left:0;*/
-	animation-name: glow;
-	animation-duration: 1200ms;
-	/*width: 30px;*/
+	position: absolute;
 	z-index: -1;
 }
 
-.stop{
-	pointer-events: none;
-}
-
+/*popup styling*/
 .popup{
 	opacity: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(255, 255, 255, 0.95);
-	position: fixed;
+	position: absolute;
 	top:0;
 	left: 0;
-	pointer-events: none;
-	justify-content: center;
-	display: flex;
-	align-items: center;
 	text-align: center;
-	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
 }
 
+/*.popup{
+	opacity: 1;
+	pointer-events: all;
+}*/
+
+
+/*main title*/
 .popup h1{
-	font-size: 32px;
-	line-height:70px;
-}
-.popup h4{
-	font-size: 30px;
-	text-align: center;
+	font: 32px/70px "Open Sans", sans-serif;
+	font-weight: 300;
 }
 
+/*timer*/
+.popup h4,
 .popup h2{
-	font-size: 30px;
-	text-align: center;
+	font-size: 32px;
+}
+
+/*removing moves text*/
+.popup h2{
 	position: relative;
 	color: transparent;
+	padding-bottom: 40px;
 }
+
+/*stars*/
 .popup h2 span{
-	margin-left: -100px;
-	text-align: center;
-	font-size: 40px;
+	position: absolute;
+	left: 69px;
+	font: 40px/10px "Open Sans", sans-serif;
 	letter-spacing: 20px;
 }
 
+/*playagain*/
 .popup button{
-	background-color: #2BDEC3;
-	border-radius: 40px;
-	color:#0C5346;
+	background-color: #2bdec3;
 	border: none;
+	border-radius: 40px;
+	color:#167162;
+	font-size: 20px;
 	height: 60px;
-	margin-top: 60px;
 	width: 300px;
-	font-size: 20px
+	transition: all 300ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
 }
 
 .popup button:hover{
-	cursor: pointer;
-	background-color: #1CD7BA;
+	background-color: #1cd7ba;
+	outline: none;
+	color: white;
+}
 
+.popup button:active{
+	background-color: #149a86;
 }
 
 /*define animation for when selection is correct*/
 @keyframes glow {
-	0%{ left:0;
-	width: 0%;
-	}
-
-	50%{left:0;
-	width: 100%;
-
-	}
-	100%{
-	left:100%;
-	right: 0;
-	width: 0%;
-	}
-
+	0% { left:0; width: 0; }
+	50% { left:0; width: 100%; }
+	100%{ left:100%; width: 0; }
 }
