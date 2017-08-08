@@ -1,5 +1,5 @@
 
-body{
+body {
 	background-color: #f9f9f9;
 	font: 14px/22px "Open Sans", sans-serif;
 	text-rendering: optimizeLegibility;
@@ -22,25 +22,25 @@ body,
 
 /*multiple items font*/
 h1,
-h2{
+h2 {
 	font: 20px/10px "Open Sans", sans-serif;
 	font-weight: 300;
 }
 
 /*avoiding referencing by class in elements that will be reused for popup, that way I can overwrite the styling*/
-h2{
+h2 {
 	position: absolute;
 	top: 18px;
 	right: 20px;
 }
 
-h4{
+h4 {
 	color: #abb2b9;
 	font-weight: 300;
 }
 
 /* this is the chrome of where the game is going to be played */
-.board{
+.board {
 	background-color: white;
 	border-radius: 4px;
 	position: relative;
@@ -52,25 +52,25 @@ h4{
 	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.02);
 }
 
-.top{
+.top {
 	border-bottom: 1px solid #f9f9f9;
 	margin-bottom: 20px;
 }
 
-.stars span{
+.stars span {
 	color: #ffc300;
 	font: 14px/10px "Open Sans", sans-serif;
 	padding-left: 20px;
 }
 
-.table{
+.table {
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 }
 
 /*cards styles*/
-.card{
+.card {
 	background-color: #aba0cb;
 	border-radius: 4px;
 	color: transparent;
@@ -78,7 +78,7 @@ h4{
 	margin: 5px;
 	width: calc(25% - 10px);
 	transform: rotateY(180deg);
-	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition: transform, color, background-color 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
 
 	/*limits user selection of the text of the cards*/
 	-webkit-touch-callout: none;
@@ -87,14 +87,14 @@ h4{
 }
 
 .card:hover,
-.popup button:hover{
+.popup button:hover {
 	cursor: pointer;
 	background-color: #c4b5e9;
 	box-shadow: 0 1px 1px rgba(72, 63, 95, 0.2);
 	box-shadow: 0 3px 3px rgba(72, 63, 95, 0.2);
 }
 
-.selected{
+.selected {
 	background-color: #7b709a;
 	color: white;
 	transform: rotateY(0deg);
@@ -102,12 +102,12 @@ h4{
 
 /*Reset style*/
 
-.reset{
+.reset {
 	margin-top: 20px;
 	border-top: 1px solid #f9f9f9;
 }
 
-.reset button{
+.reset button {
 	color: #147ff3;
 	outline:0;
 	border: 0;
@@ -122,24 +122,23 @@ h4{
 	box-sizing: border-box;
 }
 
-.reset button:hover{
+.reset button:hover {
 	background-color: #147ff3;
 	color :white;
 	cursor: pointer;
-	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition: color, background-color 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
 }
 
 /*disable click on selected items*/
 .good,
 .selected,
 .stop,
-.popup
-{
+.popup {
 	pointer-events: none;
-	transition: all 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition: transform, color, background-color 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
 }
 
-.good{
+.good {
 	background-origin: border-box;
 	background-color: #1cd7ba;
 	color: #149a86;
@@ -148,7 +147,7 @@ h4{
 }
 
 /*animation details*/
-.good::after{
+.good::after {
 	content:'';
 	animation-name: glow;
 	animation-duration: 1.2s;
@@ -160,7 +159,7 @@ h4{
 }
 
 /*popup styling*/
-.popup{
+.popup {
 	opacity: 0;
 	width: 100%;
 	height: 100%;
@@ -172,26 +171,26 @@ h4{
 }
 
 /*main title*/
-.popup h1{
+.popup h1 {
 	font: 32px/70px "Open Sans", sans-serif;
 	font-weight: 300;
 }
 
 /*timer*/
 .popup h4,
-.popup h2{
+.popup h2 {
 	font-size: 32px;
 }
 
 /*removing moves text*/
-.popup h2{
+.popup h2 {
 	position: relative;
 	color: transparent;
 	padding-bottom: 40px;
 }
 
 /*stars*/
-.popup h2 span{
+.popup h2 span {
 	position: absolute;
 	left: 69px;
 	font: 40px/10px "Open Sans", sans-serif;
@@ -199,7 +198,7 @@ h4{
 }
 
 /*playagain*/
-.popup button{
+.popup button {
 	background-color: #2bdec3;
 	border: none;
 	border-radius: 40px;
@@ -207,16 +206,16 @@ h4{
 	font-size: 20px;
 	height: 60px;
 	width: 300px;
-	transition: all 300ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition: color, background-color 300ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
 }
 
-.popup button:hover{
+.popup button:hover {
 	background-color: #1cd7ba;
 	outline: none;
 	color: white;
 }
 
-.popup button:active{
+.popup button:active {
 	background-color: #149a86;
 }
 
@@ -228,19 +227,31 @@ h4{
 }
 
 /*mediaqueries*/
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-.card { height: 150px; }
+@media only screen and
+(min-device-width : 768px) and
+(max-device-width : 1024px) and
+(orientation : landscape) and
+(-webkit-min-device-pixel-ratio : 2) {
+	.card { height: 150px; }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-.card { height: 230px; }/* Styles */
+@media only screen and
+(min-device-width : 768px) and
+(max-device-width : 1024px) and
+(orientation : portrait) and
+(-webkit-min-device-pixel-ratio : 2) {
+	.card { height: 230px; }/* Styles */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and
+(max-width: 600px) {
 	.card { height: 80px; }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+@media only screen and
+(min-device-width: 375px) and
+(max-device-height: 667px) and
+(orientation : landscape) and
+(-webkit-device-pixel-ratio: 2){
 	.card { height: 40px; }
 }
