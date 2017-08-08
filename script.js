@@ -88,7 +88,7 @@ $(function() {
     if (correctAnswers === ($('.card').length / 2)) {
       setTimeout(function() {
         $('.popup').css('pointer-events', 'all'),
-          $('.popup').css('opacity', '1');
+        $('.popup').css('opacity', '1');
         clearInterval(clock);
       }, 1800);
     }
