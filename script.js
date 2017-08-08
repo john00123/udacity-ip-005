@@ -103,6 +103,8 @@ $('.reset button').click(function() {
 //reset keydown
 $(document).ready(function() {
   $('body').on('keydown keyup', function(e) {
+
+    // e.which == 82 corresponds to 'r' or 'R'
     if (e.which == 82) {
       window.location.reload();
     }

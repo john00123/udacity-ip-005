@@ -1,12 +1,14 @@
 
+html{
+	height: 100%;
+}
+
 body {
 	background-color: #f9f9f9;
 	font: 14px/22px "Open Sans", sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	height: 100%;
-	align-content: center;
-	align-self: center;
 }
 
 /*center aligned elements*/
