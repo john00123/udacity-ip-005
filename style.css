@@ -4,7 +4,7 @@ body {
 	font: 14px/22px "Open Sans", sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
-	height: 100vh;
+	height: 100%;
 }
 
 /*center aligned elements*/
@@ -78,7 +78,10 @@ h4 {
 	margin: 5px;
 	width: calc(25% - 10px);
 	transform: rotateY(180deg);
-	transition: transform, color, background-color 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	/*transition: 582ms  0s;*/
+	transition-property: transform, color, background-color;
+	transition-duration: 582ms;
+	transition-timing-function: cubic-bezier(0.333242, 0.0554191, 0.339599, 1);
 
 	/*limits user selection of the text of the cards*/
 	-webkit-touch-callout: none;
@@ -126,7 +129,9 @@ h4 {
 	background-color: #147ff3;
 	color :white;
 	cursor: pointer;
-	transition: color, background-color 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition-property: transform, color, background-color;
+	transition-duration: 582ms;
+	transition-timing-function: cubic-bezier(0.333242, 0.0554191, 0.339599, 1);
 }
 
 /*disable click on selected items*/
@@ -135,7 +140,9 @@ h4 {
 .stop,
 .popup {
 	pointer-events: none;
-	transition: transform, color, background-color 582ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition-property: transform, color, background-color;
+	transition-duration: 582ms;
+	transition-timing-function: cubic-bezier(0.333242, 0.0554191, 0.339599, 1);
 }
 
 .good {
@@ -206,7 +213,9 @@ h4 {
 	font-size: 20px;
 	height: 60px;
 	width: 300px;
-	transition: color, background-color 300ms cubic-bezier(0.333242, 0.0554191, 0.339599, 1) 0s;
+	transition-property: color, background-color;
+	transition-duration: 582ms;
+	transition-timing-function: cubic-bezier(0.333242, 0.0554191, 0.339599, 1);
 }
 
 .popup button:hover {

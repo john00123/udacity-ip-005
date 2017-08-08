@@ -1,43 +1,44 @@
-
-
 // cards in play
-var cards =['Boat ⛵️', 'Boat ⛵️', 'Car 🚗', 'Car 🚗','House 🏡', 'House 🏡',
-'Light 💡', 'Light 💡','Lamp 🛋', 'Lamp 🛋','Bath 🛁', 'Bath 🛁','Leaf 🍁', 'Leaf 🍁','Book 📖', 'Book 📖'];
+var cards = [
+   'Boat ⛵️', 'Boat ⛵️', 'Car 🚗', 'Car 🚗','House 🏡', 'House 🏡',
+   'Light 💡', 'Light 💡','Lamp 🛋', 'Lamp 🛋','Bath 🛁', 'Bath 🛁',
+   'Leaf 🍁', 'Leaf 🍁','Book 📖', 'Book 📖'
+];
 
 // timer
 var time = 0;
-var clock = setInterval(function () {
-$('.time').text(time + ' secs'),
-time++;
+var clock = setInterval(function() {
+  $('.time').text(time + ' secs'),
+  time++;
 }, 1000);
 
 //game
-$(function(){
+$(function() {
   var max = cards.length;
   var min = 1;
 
   // create and random assign cards
-	while (max >= min){
-		var randomizer = Math.floor( Math.random()*(max-min+1));
-		var loopValue = cards[randomizer];
-		$('.table').append('<div class =\'card\'>'
-    + loopValue + '</div>'),
-		max --,
-		cards.splice(randomizer,1);
-	}
+  while (max >= min) {
+    var randomizer = Math.floor(Math.random() * (max - min + 1));
+    var loopValue = cards[randomizer];
+    $('.table').append('<div class =\'card\'>' +
+    loopValue + '</div>'),
+    max--,
+    cards.splice(randomizer, 1);
+  }
 
   // score tracker
   var moves = 0.5;
   var correctAnswers = 0;
-  var array = [];
+  var cardSelections = [];
   var index = 0;
 
   // on card click behavior
-  $('.card').click(function () {
+  $('.card').click(function() {
     var select = $(this).text();
 
-    // adds and compares cards from array
-    array.push(select);
+    // adds and compares cards from cardSelections
+    cardSelections.push(select);
     $(this).addClass('selected');
     index += 1;
 
@@ -48,21 +49,23 @@ $(function(){
       $('.card').toggleClass('stop');
 
       // correct
-      if (array[0] == array[1]) { setTimeout(function () {
+      if (cardSelections[0] == cardSelections[1]) {
+        setTimeout(function() {
           var correct = $('.selected').addClass('good');
-          $('.card').toggleClass('stop');
         }, 400);
-        index = 0;
-        array = [];
-        correctAnswers += 1;
-
-      // incorrect
-      } else { setTimeout(function () {
         $('.card').toggleClass('stop');
-        $('*').removeClass('selected');
-      }, 800);
         index = 0;
-        array = [];
+        cardSelections = [];
+        correctAnswers ++;
+
+        // incorrect
+      } else {
+        setTimeout(function() {
+          $('.card').toggleClass('stop');
+          $('*').removeClass('selected');
+        }, 800);
+        index = 0;
+        cardSelections = [];
       }
     }
 
@@ -70,10 +73,12 @@ $(function(){
     if (moves < 14.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ★ ★ </span>');
 
-    } if (moves >= 14.5) {
+    }
+    if (moves >= 14.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ★ ☆</span>');
 
-    } if (moves >= 24.5) {
+    }
+    if (moves >= 24.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ☆ ☆</span>');
     }
 
@@ -81,9 +86,9 @@ $(function(){
 
     //victory code
     if (correctAnswers === ($('.card').length / 2)) {
-      setTimeout(function () {
-        $('.popup').css('pointer-events','all'),
-        $('.popup').css('opacity','1');
+      setTimeout(function() {
+        $('.popup').css('pointer-events', 'all'),
+          $('.popup').css('opacity', '1');
         clearInterval(clock);
       }, 1800);
     }
@@ -91,15 +96,15 @@ $(function(){
 });
 
 //reset button
-$('.reset button').click(function () {
+$('.reset button').click(function() {
   window.location.reload();
 });
 
 //reset keydown
-$(document).ready(function () {
-  $('body').on('keydown keyup',function(e){
-      if(e.which == 82){
-        window.location.reload();
-      }
-    });
+$(document).ready(function() {
+  $('body').on('keydown keyup', function(e) {
+    if (e.which == 82) {
+      window.location.reload();
+    }
+  });
 });
