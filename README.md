@@ -1,6 +1,6 @@
 # Udacity Introduction to Programmin Developer Nanodegree Program
 #### Programming Fundamentals
-###### Memory Game
+### Memory Game
 The Memory Game Project is all about demostrating all things learned during the Nanodregree by using a combination of HTML, CSS and Javascript. The game is a complete browser-based card matching game a.k.a 'Concentration'.
 
 ###### Game's Objective
@@ -18,7 +18,7 @@ After that point only one star will be rewarded.
 Find all card pairs in the board.
 
 
-#### Developer notes:
+### Developer notes:
 
 - The code relies on Jquery, so it's recommended to enable JavaScript in your browser to enable full functionality.
 
