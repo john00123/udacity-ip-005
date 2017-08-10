@@ -18,7 +18,7 @@ After that point only one star will be rewarded.
 Find all card pairs in the board.
 
 
-####Developer notes:
+#### Developer notes:
 
 - The code relies on Jquery, so it's recommended to enable JavaScript in your browser to enable full functionality.
 
