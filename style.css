@@ -75,15 +75,16 @@ h4 {
 
 /*cards styles*/
 .card {
+	animation: colorChange 0.5s normal reverse;
 	background-color: #aba0cb;
 	border-radius: 4px;
-	color: transparent;
+
 	height: 200px;
 	margin: 5px;
 	width: calc(25% - 10px);
 	transform: rotateY(180deg);
-	/*transition: 582ms  0s;*/
-	transition-property: transform, color, background-color;
+	transition: 582ms  0s;
+	transition-property: transform, background-color;
 	transition-duration: 582ms;
 	transition-timing-function: cubic-bezier(0.333242, 0.0554191, 0.339599, 1);
 
@@ -91,6 +92,7 @@ h4 {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
+	color: transparent;
 }
 
 .card:hover,
@@ -105,10 +107,11 @@ h4 {
 	background-color: #7b709a;
 	color: white;
 	transform: rotateY(0deg);
+	animation-name: example;
+	animation-duration: 560ms;
 }
 
 /*Reset style*/
-
 .reset {
 	margin-top: 20px;
 	border-top: 1px solid #f9f9f9;
@@ -155,6 +158,11 @@ h4 {
 	color: #149a86;
 	position: relative;
 	transform: rotateY(0deg);
+}
+
+/* added hover to avoid previous class hover lingering*/
+.good:hover{
+	background-color: #1cd7ba;
 }
 
 /*animation details*/
@@ -237,6 +245,14 @@ h4 {
 	0% { left:0; width: 0; }
 	50% { left:0; width: 100%; }
 	100%{ left:100%; width: 0; }
+}
+
+/*define animation for card flip*/
+@keyframes example {
+	0%  {font-size: 0;}
+	49% {font-size:0;}
+	50% {font-size:14px;}
+	100%{font-size:14px;}
 }
 
 /*mediaqueries*/
