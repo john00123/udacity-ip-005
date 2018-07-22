@@ -14,24 +14,24 @@ var clock = setInterval(function() {
 
 //game
 $(function() {
+
   var max = cards.length;
   var min = 1;
-
-  // create and random assign cards
-  while (max >= min) {
-    var randomizer = Math.floor(Math.random() * (max - min + 1));
-    var loopValue = cards[randomizer];
-    $('.table').append('<div class =\'card\'>' +
-    loopValue + '</div>'),
-    max--,
-    cards.splice(randomizer, 1);
-  }
 
   // score tracker
   var moves = 0.5;
   var correctAnswers = 0;
   var cardSelections = [];
   var index = 0;
+
+  // create and random assign cards
+  while (max >= min) {
+    var randomizer = Math.floor (Math.random() * (max - min + 1));
+    var loopValue = cards[randomizer];
+    $('.table').append( "<div class ='card'>" + loopValue + "</div>"),
+    max--,
+    cards.splice(randomizer, 1);
+  }
 
   // on card click behavior
   $('.card').click(function() {
@@ -58,7 +58,7 @@ $(function() {
         cardSelections = [];
         correctAnswers ++;
 
-        // incorrect
+      // incorrect
       } else {
         setTimeout(function() {
           $('.card').toggleClass('stop');
@@ -72,11 +72,9 @@ $(function() {
     // score tracker code.
     if (moves < 14.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ★ ★ </span>');
-
     }
     if (moves >= 14.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ★ ☆</span>');
-
     }
     if (moves >= 24.5) {
       $('.stars').html(Math.round(moves) + ' moves <span> ★ ☆ ☆</span>');
